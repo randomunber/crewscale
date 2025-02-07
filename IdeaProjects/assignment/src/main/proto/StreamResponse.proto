@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.crewscale.assignment.grpc";
+
+service ProcessService {
+  rpc sendProcessedData(ProcessRequest) returns (stream ProcessResponse) {}
+}
+
+message ProcessRequest {
+  repeated int32 numbers = 1;
+}
+
+message ProcessResponse {
+  int32 processedNumber = 1;
+}
